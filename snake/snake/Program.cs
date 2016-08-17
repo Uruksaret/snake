@@ -11,14 +11,7 @@ namespace snake
         static void Main(string[] args)
         {
             Console.SetBufferSize(80, 25);
-
-            Point p1 = new Point(1, 2, '*');
-            p1.Draw();
             
-
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
             //Отрисовка Рамки
             VerticalLine leftLine = new VerticalLine(0, 24, 0,'+');
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
@@ -29,7 +22,12 @@ namespace snake
             rightLine.Draw();
             upLine.Draw();
             downLine.Draw();
-                    
+
+            Point p = new Point(3, 4, '*');
+
+            Snake snake = new Snake(p, 4, Direction.Right);
+            snake.Draw();
+
             Console.ReadLine();
         }        
     }
